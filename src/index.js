@@ -28,7 +28,9 @@ class Top extends React.Component {
 
   highscoreBox() {
     const value = this.context;
-    this.props.currentScreen.type.name !== "QuizQuestions" && value.changeBoxContent(<Highscores backTo={this.props.currentScreen} />);
+    this.props.currentScreen.type.name !== "QuizQuestions"
+     && this.props.currentScreen.type.name !== "Highscores"
+     && value.changeBoxContent(<Highscores backTo={this.props.currentScreen} />);
   }
   render() {
     return(
