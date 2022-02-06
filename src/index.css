@@ -51,8 +51,10 @@ ul,ol {
 .header{
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
-  padding: 2%;
+  padding-block: 2%;
+  padding-inline: 1rem;
   color: white;
   background: var(--theme);
 }
@@ -72,15 +74,15 @@ main{
 .box{
   display: grid;
 
-  padding: 3%;
+  padding: 2rem;
   color: var(--dark);
-  min-width: 25%;
+  min-width: 30%;
   border-radius: 20px;
   border: solid 1px rgba(0, 0, 0, 0.13);
   box-shadow: 4px 4px 2px 2px rgba(0, 0, 0, 0.2);
 }
 .box>h1{
-  line-height: 2;
+  margin-block: 0 2%;
 }
 .box>strong{
   font-size: .8rem;
@@ -89,15 +91,13 @@ main{
 }
 .box>p{
   font-size: .9rem;
-  line-height: 2;
-  margin-block: 0 1%;
+  line-height: 1.5;
+  margin-block: 0 2%;
 }
 .box>label{
   font-size: .9rem;
 }
 .box button{
-  justify-self: start;
-
   cursor: pointer;
   font-size: .8rem;
   padding: 1.5%;
@@ -109,8 +109,8 @@ main{
 
 /* ----------highscore--------------- */
 .scoreList{
-  font-size: .8rem;
-  margin-block: 2%;
+  font-size: .9rem;
+  margin-block: 4%;
 }
 .scoreBtns{
   display: flex;
@@ -118,8 +118,8 @@ main{
   flex-wrap: nowrap;
 }
 .scoreBtns > button {
-  padding-block: 2.5%;
-  padding-inline: 4%;
+  padding-block: .4rem;
+  padding-inline: 1rem;
 }
 
 /* ---------- quiz questions --------------- */
@@ -143,9 +143,10 @@ main{
   background: rgba(250, 0, 50, 1);
 }
 
-/* -----------------highScoreRegister---------------------- */
+/* -----------------highScoreRegister / Over---------------------- */
 .highScoreRegister{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -154,4 +155,15 @@ main{
 }
 .highScoreRegister input{
   width: 50%;
+}
+.highScoreRegister button{
+  padding-block: .4rem;
+  padding-inline: 1.5rem;
+}
+
+/* ---------------responsive--------------------- */
+@media only screen and (max-width: 600px) {
+  .box{
+    width: 80%;
+  }
 }
