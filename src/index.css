@@ -1,13 +1,157 @@
-body {
+::selection {
+  color: white;
+  background: grey;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+}
+html, body {
+  height: 100%;
+}
+body {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: "Verdana",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+img, picture, video, canvas, svg {
+  display: block;
+  max-inline-size: 100%;
+  object-fit: cover;
+  block-size: auto;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+ul,ol {
+  padding: 0;
+  list-style-position: inside;
+}
+#root, #__next {
+  isolation: isolate;
+  --theme: #218380;
+  --dark: rgba(10, 10, 10, 0.8);
+  height: 100%;
+
+  display: grid;
+  grid-template-rows: .1fr 1fr;
+}
+/* -----------csss reset over-------------- */
+
+.header{
+  display: flex;
+  justify-content: space-between;
+
+  padding: 2%;
+  color: white;
+  background: var(--theme);
+}
+.header > .highscore {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+
+/* ------------main-body------------ */
+main{
+  display: grid;
+  place-items: center;
+}
+.box{
+  display: grid;
+
+  padding: 3%;
+  color: var(--dark);
+  min-width: 25%;
+  border-radius: 20px;
+  border: solid 1px rgba(0, 0, 0, 0.13);
+  box-shadow: 4px 4px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.box>h1{
+  line-height: 2;
+}
+.box>strong{
+  font-size: .8rem;
+  line-height: 2;
+  margin-block: 0 1%;
+}
+.box>p{
+  font-size: .9rem;
+  line-height: 2;
+  margin-block: 0 1%;
+}
+.box>label{
+  font-size: .9rem;
+}
+.box button{
+  justify-self: start;
+
+  cursor: pointer;
+  font-size: .8rem;
+  padding: 1.5%;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  background: var(--theme);
+}
+
+/* ----------highscore--------------- */
+.scoreList{
+  font-size: .8rem;
+  margin-block: 2%;
+}
+.scoreBtns{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+.scoreBtns > button {
+  padding-block: 2.5%;
+  padding-inline: 4%;
+}
+
+/* ---------- quiz questions --------------- */
+.answers{
+  list-style-position: inside;
+}
+.answers li {
+  font-size: .8rem;
+  padding-inline: 4%;
+  padding-block: 2%;
+  border-radius: .51rem;
+  color: white;
+  margin-block: 2%;
+  cursor: pointer;
+  background: var(--theme);
+}
+.answers .correct {
+  background: rgba(0, 205, 50, 1);
+}
+.answers .incorrect {
+  background: rgba(250, 0, 50, 1);
+}
+
+/* -----------------highScoreRegister---------------------- */
+.highScoreRegister{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.highScoreRegister label{
+  white-space: nowrap;
+}
+.highScoreRegister input{
+  width: 50%;
 }
