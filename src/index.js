@@ -208,7 +208,8 @@ class App extends React.Component {
   }
   startTime() {
     this.timerID = setInterval(()=>{
-      this.setState({time: --this.state.time});
+      let tti = this.state.time;
+      this.setState({time: --tti});
       if(this.state.time <= 0) {
         this.componentWillUnmount();
       }
